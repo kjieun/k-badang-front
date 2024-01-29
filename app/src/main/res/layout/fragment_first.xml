@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="#f3f4f6">
+    android:background="#f3f4f6"
+    tools:ignore="SpeakableTextPresentCheck">
 
     <TextView
         android:id="@+id/textView"
@@ -12,19 +13,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="18dp"
+        android:fontFamily="@font/notosansbold"
+        android:includeFontPadding="false"
+        android:text="내 배당주"
         android:textColor="@color/black"
         android:textSize="32dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:fontFamily="sans-serif"
-        android:text="내 배당주" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
+        android:id="@+id/alertButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="21dp"
-        android:background="@drawable/group_19309"
+        android:background="@drawable/group_237491"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,11 +40,25 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="15dp"
         android:background="@drawable/searchbar"
-        android:hint="          검색"
+        android:fontFamily="@font/notosansbold"
+        android:hint="            검색"
+        android:includeFontPadding="false"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
         android:textColorHint="#d3b1a8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton_click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/group_237471_click"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -50,7 +68,8 @@
         android:layout_marginTop="100dp"
         android:background="@drawable/group_237471"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:visibility="invisible"/>
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -59,31 +78,515 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="100dp"
         android:background="@drawable/group_237472"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintStart_toEndOf="@+id/imageButton_click"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <ImageButton
-        android:id="@+id/stockButton1"
+        android:id="@+id/imageButton2_click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/group_237472_click"
+        app:layout_constraintStart_toEndOf="@+id/imageButton_click"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:visibility="invisible"/>
+
+    <ScrollView
+        android:id="@+id/userstock_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:background="@drawable/card_blue"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        android:visibility="visible">
 
-    <ImageButton
-        android:id="@+id/stockButton2"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/stockboxLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="SpeakableTextPresentCheck">
+
+                <ImageButton
+                    android:id="@+id/stockButton1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/card_blue"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateIds" />
+
+                <TextView
+                    android:id="@+id/stockText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="17dp"
+                    android:fontFamily="@font/notosansbold"
+                    android:includeFontPadding="false"
+                    android:text="삼성전자"
+                    android:textColor="#ffffff"
+                    android:textSize="26sp"
+                    app:layout_constraintStart_toStartOf="@+id/stockButton1"
+                    app:layout_constraintTop_toTopOf="@+id/stockButton1" />
+
+                <TextView
+                    android:id="@+id/stock1_textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosansregular"
+                    android:includeFontPadding="false"
+                    android:text="보유 주식 : "
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/stockText1"
+                    app:layout_constraintEnd_toEndOf="@+id/stockButton1"
+                    app:layout_constraintStart_toEndOf="@+id/stockText1"
+                    app:layout_constraintTop_toTopOf="@+id/stockText1" />
+
+                <TextView
+                    android:id="@+id/stock1_userstock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosansbold"
+                    android:includeFontPadding="false"
+                    android:text="5주"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/stock1_textView2"
+                    app:layout_constraintStart_toEndOf="@+id/stock1_textView2"
+                    app:layout_constraintTop_toTopOf="@+id/stock1_textView2" />
+
+                <TextView
+                    android:id="@+id/stock1_textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/notosansregular"
+                    android:includeFontPadding="false"
+                    android:text="최근 배당 수익률"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/stockText1"
+                    app:layout_constraintTop_toBottomOf="@+id/stockText1" />
+
+                <TextView
+                    android:id="@+id/stock1_divTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosansbold"
+                    android:includeFontPadding="false"
+                    android:text="05.00"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    app:layout_constraintStart_toStartOf="@+id/stock1_textView3"
+                    app:layout_constraintTop_toBottomOf="@+id/stock1_textView3" />
+
+                <TextView
+                    android:id="@+id/stock1_textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/notosansbold"
+                    android:includeFontPadding="false"
+                    android:text="%"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/stock1_divTextView"
+                    app:layout_constraintStart_toEndOf="@+id/stock1_divTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/stock1_textView3" />
+
+                <TextView
+                    android:id="@+id/stock1_divDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/notosansregular"
+                    android:includeFontPadding="false"
+                    android:text="2023년 9월 기준"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/stock1_textView5"
+                    app:layout_constraintEnd_toEndOf="@+id/stockButton1" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/stockboxLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="SpeakableTextPresentCheck">
+
+
+                <ImageButton
+                    android:id="@+id/stockButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginEnd="17dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/card_rad"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/stockText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="17dp"
+                    android:fontFamily="@font/notosansbold"
+                    android:includeFontPadding="false"
+                    android:text="SK하이닉스"
+                    android:textColor="#ffffff"
+                    android:textSize="26sp"
+                    app:layout_constraintStart_toStartOf="@+id/stockButton2"
+                    app:layout_constraintTop_toTopOf="@+id/stockButton2" />
+
+
+                <TextView
+                    android:id="@+id/stock2_textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosansregular"
+                    android:includeFontPadding="false"
+                    android:text="보유 주식 : "
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/stockText2"
+                    app:layout_constraintEnd_toEndOf="@+id/stockButton2"
+                    app:layout_constraintStart_toEndOf="@+id/stockText2"
+                    app:layout_constraintTop_toTopOf="@+id/stockText2" />
+
+                <TextView
+                    android:id="@+id/stock2_userstock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosansbold"
+                    android:includeFontPadding="false"
+                    android:text="5주"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/stock2_textView2"
+                    app:layout_constraintStart_toEndOf="@+id/stock2_textView2"
+                    app:layout_constraintTop_toTopOf="@+id/stock2_textView2" />
+
+                <TextView
+                    android:id="@+id/stock2_textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/notosansregular"
+                    android:includeFontPadding="false"
+                    android:text="최근 배당 수익률"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/stockText2"
+                    app:layout_constraintTop_toBottomOf="@+id/stockText2" />
+
+                <TextView
+                    android:id="@+id/stock2_divTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosansbold"
+                    android:includeFontPadding="false"
+                    android:text="05.00"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    app:layout_constraintStart_toStartOf="@+id/stock2_textView3"
+                    app:layout_constraintTop_toBottomOf="@+id/stock2_textView3" />
+
+                <TextView
+                    android:id="@+id/stock2_textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/notosansbold"
+                    android:includeFontPadding="false"
+                    android:text="%"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/stock2_divTextView"
+                    app:layout_constraintStart_toEndOf="@+id/stock2_divTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/stock2_textView3" />
+
+                <TextView
+                    android:id="@+id/stock2_divDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/notosansregular"
+                    android:includeFontPadding="false"
+                    android:text="2023년 9월 기준"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/stock2_textView5"
+                    app:layout_constraintEnd_toEndOf="@+id/stockButton2" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+    <ScrollView
+        android:id="@+id/addstock_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:background="@drawable/card_rad"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/stockButton1" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/addstock_stockboxLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="SpeakableTextPresentCheck"
+                android:layout_marginBottom="10dp">
+
+                <ImageButton
+                    android:id="@+id/addstock_stockButton1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/card_green"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateIds" />
+
+                <TextView
+                    android:id="@+id/addstock_stockText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="17dp"
+                    android:fontFamily="@font/notosansbold"
+                    android:includeFontPadding="false"
+                    android:text="삼성전자"
+                    android:textColor="#ffffff"
+                    android:textSize="26sp"
+                    app:layout_constraintStart_toStartOf="@+id/addstock_stockButton1"
+                    app:layout_constraintTop_toTopOf="@+id/addstock_stockButton1" />
+
+                <TextView
+                    android:id="@+id/addstock_stock1_textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosansregular"
+                    android:includeFontPadding="false"
+                    android:text="보유 주식 : "
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/addstock_stockText1"
+                    app:layout_constraintEnd_toEndOf="@+id/addstock_stockButton1"
+                    app:layout_constraintStart_toEndOf="@+id/addstock_stockText1"
+                    app:layout_constraintTop_toTopOf="@+id/addstock_stockText1" />
+
+                <TextView
+                    android:id="@+id/addstock_stock1_userstock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosansbold"
+                    android:includeFontPadding="false"
+                    android:text="5주"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/addstock_stock1_textView2"
+                    app:layout_constraintStart_toEndOf="@+id/addstock_stock1_textView2"
+                    app:layout_constraintTop_toTopOf="@+id/addstock_stock1_textView2" />
+
+                <TextView
+                    android:id="@+id/addstock_stock1_textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/notosansregular"
+                    android:includeFontPadding="false"
+                    android:text="최근 배당 수익률"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/addstock_stockText1"
+                    app:layout_constraintTop_toBottomOf="@+id/addstock_stockText1" />
+
+                <TextView
+                    android:id="@+id/addstock_stock1_divTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosansbold"
+                    android:includeFontPadding="false"
+                    android:text="05.00"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    app:layout_constraintStart_toStartOf="@+id/addstock_stock1_textView3"
+                    app:layout_constraintTop_toBottomOf="@+id/addstock_stock1_textView3" />
+
+                <TextView
+                    android:id="@+id/addstock_stock1_textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/notosansbold"
+                    android:includeFontPadding="false"
+                    android:text="%"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/addstock_stock1_divTextView"
+                    app:layout_constraintStart_toEndOf="@+id/addstock_stock1_divTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/addstock_stock1_textView3" />
+
+                <TextView
+                    android:id="@+id/addstock_stock1_divDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/notosansregular"
+                    android:includeFontPadding="false"
+                    android:text="2023년 9월 기준"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/addstock_stock1_textView5"
+                    app:layout_constraintEnd_toEndOf="@+id/addstock_stockButton1" />
 
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/addstock_stockboxLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="SpeakableTextPresentCheck">
+
+
+                <ImageButton
+                    android:id="@+id/addstock_stockButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginEnd="17dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/card_yellow"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/addstock_stockText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="17dp"
+                    android:fontFamily="@font/notosansbold"
+                    android:includeFontPadding="false"
+                    android:text="SK하이닉스"
+                    android:textColor="#ffffff"
+                    android:textSize="26sp"
+                    app:layout_constraintStart_toStartOf="@+id/addstock_stockButton2"
+                    app:layout_constraintTop_toTopOf="@+id/addstock_stockButton2" />
+
+
+                <TextView
+                    android:id="@+id/addstock_stock2_textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosansregular"
+                    android:includeFontPadding="false"
+                    android:text="보유 주식 : "
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/addstock_stockText2"
+                    app:layout_constraintEnd_toEndOf="@+id/addstock_stockButton2"
+                    app:layout_constraintStart_toEndOf="@+id/addstock_stockText2"
+                    app:layout_constraintTop_toTopOf="@+id/addstock_stockText2" />
+
+                <TextView
+                    android:id="@+id/addstock_stock2_userstock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosansbold"
+                    android:includeFontPadding="false"
+                    android:text="5주"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/addstock_stock2_textView2"
+                    app:layout_constraintStart_toEndOf="@+id/addstock_stock2_textView2"
+                    app:layout_constraintTop_toTopOf="@+id/addstock_stock2_textView2" />
+
+                <TextView
+                    android:id="@+id/addstock_stock2_textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/notosansregular"
+                    android:includeFontPadding="false"
+                    android:text="최근 배당 수익률"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/addstock_stockText2"
+                    app:layout_constraintTop_toBottomOf="@+id/addstock_stockText2" />
+
+                <TextView
+                    android:id="@+id/addstock_stock2_divTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosansbold"
+                    android:includeFontPadding="false"
+                    android:text="05.00"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    app:layout_constraintStart_toStartOf="@+id/addstock_stock2_textView3"
+                    app:layout_constraintTop_toBottomOf="@+id/addstock_stock2_textView3" />
+
+                <TextView
+                    android:id="@+id/addstock_stock2_textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/notosansbold"
+                    android:includeFontPadding="false"
+                    android:text="%"
+                    android:textColor="@color/white"
+                    android:textSize="32sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/addstock_stock2_divTextView"
+                    app:layout_constraintStart_toEndOf="@+id/addstock_stock2_divTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/addstock_stock2_textView3" />
+
+                <TextView
+                    android:id="@+id/addstock_stock2_divDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:fontFamily="@font/notosansregular"
+                    android:includeFontPadding="false"
+                    android:text="2023년 9월 기준"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/addstock_stock2_textView5"
+                    app:layout_constraintEnd_toEndOf="@+id/addstock_stockButton2" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

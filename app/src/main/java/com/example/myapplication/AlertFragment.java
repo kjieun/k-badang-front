@@ -9,11 +9,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.myapplication.databinding.FragmentSecondBinding;
+import com.example.myapplication.databinding.FragmentAlertBinding;
 
-public class SecondFragment extends Fragment {
-
-    private FragmentSecondBinding binding;
+public class AlertFragment extends Fragment {
+    private FragmentAlertBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,7 +20,7 @@ public class SecondFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        binding = com.example.myapplication.databinding.FragmentAlertBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -29,6 +28,13 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        binding.buttonPrevious.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(AlertFragment.this)
+                        .navigate(R.id.action_AlertFragment_to_FirstFragment);
+            }
+        });
     }
 
     @Override
@@ -36,5 +42,4 @@ public class SecondFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
 }
