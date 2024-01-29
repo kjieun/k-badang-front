@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".NoticeFormFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/titlelayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/rectangle_underline_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/notosansbold"
+            android:gravity="center"
+            android:text="배당금 지급 통지서"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <Button
+            android:id="@+id/button_previous"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/previous"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="37dp"
+        android:fontFamily="@font/notosansbold"
+        android:text="\'삼성전자\'의 \'60\'기 배당 내역을 아래와 같이 배정하오니 수령하시기 바랍니다."
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titlelayout" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/notosansregular"
+        android:includeFontPadding="false"
+        android:text="배당 기준일  |  "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/noticeDivDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosansregular"
+        android:includeFontPadding="false"
+        android:text="2023.12.31"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toTopOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/notosansregular"
+        android:includeFontPadding="false"
+        android:text="주주번호  |  "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/userNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosansregular"
+        android:includeFontPadding="false"
+        android:text="50000000200920053****"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toTopOf="@+id/textView9" />
+
+    <HorizontalScrollView
+        android:id="@+id/scrollview1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginRight="21dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView7"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView7">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/firstnoticetitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/rectangle_underline_gray">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansregular"
+                android:includeFontPadding="false"
+                android:text="종류"
+                android:textAlignment="center"
+                android:textColor="#b5b7c0"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansregular"
+                android:includeFontPadding="false"
+                android:text="소유주식수"
+                android:textAlignment="center"
+                android:textColor="#b5b7c0"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/textView10"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansregular"
+                android:includeFontPadding="false"
+                android:text="현금 배당률 (%)"
+                android:textAlignment="center"
+                android:textColor="#b5b7c0"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/textView11"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansregular"
+                android:includeFontPadding="false"
+                android:text="주식 배당률 (%)"
+                android:textAlignment="center"
+                android:textColor="#b5b7c0"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/textView12"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansregular"
+                android:includeFontPadding="false"
+                android:text="단주수"
+                android:textAlignment="center"
+                android:textColor="#b5b7c0"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/textView13"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansregular"
+                android:includeFontPadding="false"
+                android:text="현금 배당 내역"
+                android:textAlignment="center"
+                android:textColor="#b5b7c0"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/textView14"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansregular"
+                android:includeFontPadding="false"
+                android:text="주식 배당 내역"
+                android:textAlignment="center"
+                android:textColor="#b5b7c0"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/textView15"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- 값 행 2-->
+            <TextView
+                android:id="@+id/firstnoticesub1"
+                android:layout_width="100dp"
+                android:layout_height="65dp"
+                android:text="우선주"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:fontFamily="@font/notosansregular"
+                app:layout_constraintEnd_toEndOf="@+id/firstnotice1"
+                app:layout_constraintStart_toStartOf="@+id/firstnotice1"
+                app:layout_constraintTop_toBottomOf="@+id/firstnotice1" />
+
+            <TextView
+                android:id="@+id/firstnoticesub2"
+                android:layout_width="100dp"
+                android:layout_height="65dp"
+                android:fontFamily="@font/notosansregular"
+                android:gravity="center"
+                android:text="3"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView11"
+                app:layout_constraintStart_toStartOf="@+id/textView11"
+                app:layout_constraintTop_toTopOf="@+id/firstnoticesub1" />
+
+            <TextView
+                android:id="@+id/firstnoticesub3"
+                android:layout_width="100dp"
+                android:layout_height="65dp"
+                android:fontFamily="@font/notosansregular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="140"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView12"
+                app:layout_constraintStart_toStartOf="@+id/textView12"
+                app:layout_constraintTop_toBottomOf="@+id/fitStartnotice3" />
+
+            <TextView
+                android:id="@+id/firstnoticesub4"
+                android:layout_width="100dp"
+                android:layout_height="65dp"
+                android:fontFamily="@font/notosansregular"
+                android:gravity="center"
+                android:text="0"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView13"
+                app:layout_constraintStart_toStartOf="@+id/textView13"
+                app:layout_constraintTop_toBottomOf="@+id/fitStartnotice4" />
+
+            <TextView
+                android:id="@+id/firstnoticesu5"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="65dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:fontFamily="@font/notosansregular"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView14"
+                app:layout_constraintStart_toStartOf="@+id/textView14"
+                app:layout_constraintTop_toBottomOf="@+id/fitStartnotice5" />
+
+            <TextView
+                android:id="@+id/firstnoticesu6"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="65dp"
+                android:text="2500"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:fontFamily="@font/notosansregular"
+                app:layout_constraintEnd_toEndOf="@+id/textView15"
+                app:layout_constraintStart_toStartOf="@+id/textView15"
+                app:layout_constraintTop_toBottomOf="@+id/fitStartnotice6"  />
+
+            <TextView
+                android:id="@+id/firstnoticesu7"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="65dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:fontFamily="@font/notosansregular"
+                app:layout_constraintEnd_toEndOf="@+id/textView16"
+                app:layout_constraintStart_toStartOf="@+id/textView16"
+                app:layout_constraintTop_toBottomOf="@+id/fitStartnotice7"  />
+
+            <TextView
+                android:id="@+id/firstnotice1"
+                android:layout_width="100dp"
+                android:layout_height="65dp"
+                android:text="보통주"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:fontFamily="@font/notosansregular"
+                app:layout_constraintEnd_toEndOf="@+id/textView10"
+                app:layout_constraintStart_toStartOf="@+id/textView10"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            <TextView
+                android:id="@+id/firstnotice2"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="65dp"
+                android:text="3"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:fontFamily="@font/notosansregular"
+                app:layout_constraintEnd_toEndOf="@+id/textView11"
+                app:layout_constraintStart_toStartOf="@+id/textView11"
+                app:layout_constraintTop_toBottomOf="@+id/textView11"  />
+
+            <TextView
+                android:id="@+id/fitStartnotice3"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="65dp"
+                android:includeFontPadding="false"
+                android:text="140"
+                android:textAlignment="center"
+                android:fontFamily="@font/notosansregular"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView12"
+                app:layout_constraintStart_toStartOf="@+id/textView12"
+                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+            <TextView
+                android:id="@+id/fitStartnotice4"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="65dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:fontFamily="@font/notosansregular"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView13"
+                app:layout_constraintStart_toStartOf="@+id/textView13"
+                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+            <TextView
+                android:id="@+id/fitStartnotice5"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="65dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:fontFamily="@font/notosansregular"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView14"
+                app:layout_constraintStart_toStartOf="@+id/textView14"
+                app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+            <TextView
+                android:id="@+id/fitStartnotice6"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="65dp"
+                android:text="2500"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:fontFamily="@font/notosansregular"
+                app:layout_constraintEnd_toEndOf="@+id/textView15"
+                app:layout_constraintStart_toStartOf="@+id/textView15"
+                app:layout_constraintTop_toBottomOf="@+id/textView15"  />
+
+            <TextView
+                android:id="@+id/fitStartnotice7"
+                android:layout_width="100dp"
+                android:gravity="center"
+                android:layout_height="65dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:fontFamily="@font/notosansregular"
+                app:layout_constraintEnd_toEndOf="@+id/textView16"
+                app:layout_constraintStart_toStartOf="@+id/textView16"
+                app:layout_constraintTop_toBottomOf="@+id/textView16"  />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginRight="21dp"
+        app:layout_constraintEnd_toEndOf="@+id/scrollview1"
+        app:layout_constraintStart_toStartOf="@+id/scrollview1"
+        app:layout_constraintTop_toBottomOf="@+id/scrollview1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_underline_gray"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansregular"
+                android:includeFontPadding="false"
+                android:text="질권주식수"
+                android:textAlignment="center"
+                android:textColor="#b5b7c0"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansregular"
+                android:includeFontPadding="false"
+                android:text="주권교부일"
+                android:textAlignment="center"
+                android:textColor="#b5b7c0"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/textView17"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansregular"
+                android:includeFontPadding="false"
+                android:text="소득세"
+                android:textAlignment="center"
+                android:textColor="#b5b7c0"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/textView18"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansregular"
+                android:includeFontPadding="false"
+                android:text="주민세"
+                android:textAlignment="center"
+                android:textColor="#b5b7c0"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/textView19"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- 값 행 -->
+            <TextView
+                android:id="@+id/secondnotice1"
+                android:layout_width="100dp"
+                android:layout_height="65dp"
+                android:fontFamily="@font/notosansregular"
+                android:gravity="center"
+                android:text="-"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView17"
+                app:layout_constraintStart_toStartOf="@+id/textView17"
+                app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+            <TextView
+                android:id="@+id/secondnotice2"
+                android:layout_width="100dp"
+                android:layout_height="65dp"
+                android:fontFamily="@font/notosansregular"
+                android:gravity="center"
+                android:text="-"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView18"
+                app:layout_constraintStart_toStartOf="@+id/textView18"
+                app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+            <TextView
+                android:id="@+id/secondnotice3"
+                android:layout_width="100dp"
+                android:layout_height="65dp"
+                android:fontFamily="@font/notosansregular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="-"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView19"
+                app:layout_constraintStart_toStartOf="@+id/textView19"
+                app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+            <TextView
+                android:id="@+id/secondnotice4"
+                android:layout_width="100dp"
+                android:layout_height="65dp"
+                android:fontFamily="@font/notosansregular"
+                android:gravity="center"
+                android:text="-"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView20"
+                app:layout_constraintStart_toStartOf="@+id/textView20"
+                app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/notosansregular"
+        android:includeFontPadding="false"
+        android:text="1차 지급일  |  "
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosansregular"
+        android:includeFontPadding="false"
+        android:text="2024.01.03"
+        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintTop_toTopOf="@+id/textView22" />
+
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosansregular"
+        android:includeFontPadding="false"
+        android:text="2차 지급일  |  "
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosansregular"
+        android:includeFontPadding="false"
+        android:text="2024.06.13"
+        app:layout_constraintStart_toEndOf="@+id/textView24"
+        app:layout_constraintTop_toTopOf="@+id/textView24" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosansregular"
+        android:includeFontPadding="false"
+        android:text="지급 장소  |  "
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosansregular"
+        android:includeFontPadding="false"
+        android:text="키움증권 (1544-9000)"
+        app:layout_constraintStart_toEndOf="@+id/textView26"
+        app:layout_constraintTop_toTopOf="@+id/textView26" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

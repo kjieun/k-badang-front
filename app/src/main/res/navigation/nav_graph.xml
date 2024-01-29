@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_AlertFragment"
             app:destination="@id/AlertFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_DividendFragment"
+            app:destination="@id/DividendFragment" />
 
     </fragment>
     <fragment
@@ -38,5 +41,42 @@
         <action
             android:id="@+id/action_AlertFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_AlertFragment_to_DivNoticeFragment"
+            app:destination="@id/DivNoticeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/DividendFragment"
+        android:name="com.example.myapplication.DividendFragment"
+        android:label="devidend_fragment_label"
+        tools:layout="@layout/fragment_dividend">
+
+        <action
+            android:id="@+id/action_DividendFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/DivNoticeFragment"
+        android:name="com.example.myapplication.DivNoticeFragment"
+        android:label="divnotice_fragment_label"
+        tools:layout="@layout/fragment_divnotice">
+        <action
+            android:id="@+id/action_DivNoticeFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_DivNoticeFragment_to_NoticeFormFragment"
+            app:destination="@id/NoticeFormFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/NoticeFormFragment"
+        android:name="com.example.myapplication.NoticeFormFragment"
+        android:label="noticeform_fragment_label"
+        tools:layout="@layout/fragment_noticeform">
+        <action
+            android:id="@+id/action_NoticeFormFragment_to_DivNoticeFragment"
+            app:destination="@id/DivNoticeFragment" />
+    </fragment>
+
+
 </navigation>

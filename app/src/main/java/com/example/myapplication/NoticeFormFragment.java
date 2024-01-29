@@ -9,11 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.myapplication.databinding.FragmentSecondBinding;
+import com.example.myapplication.databinding.FragmentNoticeformBinding;
 
-public class SecondFragment extends Fragment {
+public class NoticeFormFragment extends Fragment {
 
-    private FragmentSecondBinding binding;
+    private FragmentNoticeformBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,13 +21,21 @@ public class SecondFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        binding = FragmentNoticeformBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        binding.buttonPrevious.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(NoticeFormFragment.this)
+                        .navigate(R.id.action_NoticeFormFragment_to_DivNoticeFragment);
+            }
+        });
 
     }
 
@@ -37,5 +45,4 @@ public class SecondFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
 }

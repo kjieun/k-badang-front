@@ -9,10 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.myapplication.databinding.FragmentAlertBinding;
+import com.example.myapplication.databinding.FragmentDivnoticeBinding;
 
-public class AlertFragment extends Fragment {
-    private FragmentAlertBinding binding;
+public class DivNoticeFragment extends Fragment {
+
+    private FragmentDivnoticeBinding binding;
 
     @Override
     public View onCreateView(
@@ -20,7 +21,7 @@ public class AlertFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = com.example.myapplication.databinding.FragmentAlertBinding.inflate(inflater, container, false);
+        binding = FragmentDivnoticeBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -31,19 +32,20 @@ public class AlertFragment extends Fragment {
         binding.buttonPrevious.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(AlertFragment.this)
-                        .navigate(R.id.action_AlertFragment_to_FirstFragment);
+                NavHostFragment.findNavController(DivNoticeFragment.this)
+                        .navigate(R.id.action_DivNoticeFragment_to_FirstFragment);
             }
         });
 
-        binding.dividendBox.setOnClickListener(new View.OnClickListener() {
+        binding.divnoticelayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(AlertFragment.this)
-                        .navigate(R.id.action_AlertFragment_to_DivNoticeFragment);
+                NavHostFragment.findNavController(DivNoticeFragment.this)
+                        .navigate(R.id.action_DivNoticeFragment_to_NoticeFormFragment);
             }
         });
     }
+
 
     @Override
     public void onDestroyView() {

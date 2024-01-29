@@ -39,15 +39,12 @@ public class FirstFragment extends Fragment {
         Call<DataModel1> call;
 
         call = retrofit_client.getApiService().test_api_get("5");
-        call.enqueue(new Callback<DataModel1>(){
+        call.enqueue(new Callback<DataModel1>() {
             @Override
             public void onResponse(Call<DataModel1> call, Response<DataModel1> response) {
                 DataModel1 result = response.body();
                 String str;
-                str= result.getUserId() +"\n"+
-                        result.getID()+"\n"+
-                        result.getTitle()+"\n"+
-                        result.getBody();
+                str = result.getUserId() + "\n" + result.getID() + "\n" + result.getTitle() + "\n" + result.getBody();
                 Log.d("kbadang", "userId: " + result.getUserId());
                 Log.d("kbadang", "id : " + result.getID());
                 Log.d("kbadang", "title : " + result.getTitle());
@@ -64,16 +61,14 @@ public class FirstFragment extends Fragment {
         binding.alertButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_AlertFragment);
+                NavHostFragment.findNavController(FirstFragment.this).navigate(R.id.action_FirstFragment_to_AlertFragment);
             }
         });
 
         binding.stockButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                NavHostFragment.findNavController(FirstFragment.this).navigate(R.id.action_FirstFragment_to_SecondFragment);
             }
         });
 
@@ -100,6 +95,14 @@ public class FirstFragment extends Fragment {
 
                 binding.userstockLayout.setVisibility(View.INVISIBLE);
                 binding.addstockLayout.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+        binding.addstockButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(FirstFragment.this).navigate(R.id.action_FirstFragment_to_DividendFragment);
 
             }
         });
