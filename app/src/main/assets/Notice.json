@@ -1,0 +1,20 @@
+{
+  "id": 1,
+  "stock_name": "삼성전자",
+  "payment_period": "2024-01-29T20:17:08",
+  "base_date": "2024-01-29T20:15:39",
+  "member_num": 2123123,
+  "stock_type": "COMMON",
+  "cash_rate": 0.01,
+  "stock_rate": 0.0,
+  "short_holding": 12.0,
+  "cash_price": 9.0,
+  "stock_price": 0.0,
+  "pledged_share": 0.0,
+  "stock_date": "2024-01-29T20:16:37",
+  "income_tax": 0.0,
+  "resident_tax": 0.0,
+  "first_paydate": "2024-01-29T20:17:26",
+  "second_paydate": "2024-01-29T20:16:41",
+  "place": "키움증권"
+}

@@ -133,6 +133,94 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dividendBox2"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            tools:layout_editor_absoluteX="0dp"
+            android:background="@drawable/rectangle_underline_gray">
+
+            <ImageView
+                android:id="@+id/iconDiv2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/icon_div"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:fontFamily="@font/notosansbold"
+                android:includeFontPadding="false"
+                android:text="배당 통지서"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/iconDiv2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/divtextTitle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansregular"
+                android:includeFontPadding="false"
+                android:text="9월 배당 통지 | 삼성전자 배당 통지서 수령"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/newslayout2"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            tools:layout_editor_absoluteX="0dp"
+            android:background="@drawable/rectangle_underline_gray">
+
+            <ImageView
+                android:id="@+id/iconNews2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/icon_news"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:fontFamily="@font/notosansbold"
+                android:includeFontPadding="false"
+                android:text="뉴스 요약"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/iconNews2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/newstextTitle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansregular"
+                android:includeFontPadding="false"
+                android:text="9월 20일 뉴스 요약 | 삼성전자"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView6"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
