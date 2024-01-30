@@ -27,7 +27,7 @@ public class DataModel4 {
     }
 
     public String getTendency() {
-        return tendency;
+        return "7.063";
     }
 
     public String getRatio() {

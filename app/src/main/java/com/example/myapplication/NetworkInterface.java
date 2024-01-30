@@ -1,10 +1,10 @@
 package com.example.myapplication;
 
-import okhttp3.ResponseBody;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface NetworkInterface {
@@ -15,7 +15,19 @@ public interface NetworkInterface {
             @Query("id") String id,
             @Query("type") String type
     );
+    @GET("/default/test2")
+    @Headers({"x-api-key: UqORjPGp5uacblhwUdL117r05fzlLa9B7TAU9tNi"})
+    Call<List<DataModelNews>> test_3(
+            @Query("id") String id,
+            @Query("type") String type
+    );
 
+    @GET("/default/test2")
+    @Headers({"x-api-key: UqORjPGp5uacblhwUdL117r05fzlLa9B7TAU9tNi"})
+    Call<DataModelNews> test_4(
+            @Query("id") String id,
+            @Query("type") String type
+    );
 
     @GET("/posts/{id}")
     Call<DataModel1> test_api_get(

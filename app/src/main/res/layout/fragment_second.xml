@@ -211,7 +211,7 @@
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/notosansbold"
-                        android:textColor="#6A4035"
+                        android:textColor="#EC6D1E"
                         android:gravity="center"
                         android:includeFontPadding="false"
                         android:text="    " />
@@ -231,7 +231,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/notosansbold"
                         android:gravity="center"
-                        android:textColor="#6A4035"
+                        android:textColor="#EC6D1E"
                         android:includeFontPadding="false"
                         android:text="    " />
 
@@ -250,7 +250,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/notosansbold"
                         android:gravity="center"
-                        android:textColor="#6A4035"
+                        android:textColor="#EC6D1E"
                         android:includeFontPadding="false"
                         android:text="    " />
 
@@ -270,7 +270,7 @@
                         android:fontFamily="@font/notosansbold"
                         android:gravity="center"
                         android:includeFontPadding="false"
-                        android:textColor="#6A4035"
+                        android:textColor="#EC6D1E"
                         android:text="    " />
                 </TableRow>
 
@@ -292,7 +292,7 @@
                         android:fontFamily="@font/notosansbold"
                         android:gravity="center"
                         android:includeFontPadding="false"
-                        android:textColor="#6A4035"
+                        android:textColor="#EC6D1E"
                         android:text="    " />
 
                     <TextView
@@ -311,7 +311,7 @@
                         android:fontFamily="@font/notosansbold"
                         android:gravity="center"
                         android:includeFontPadding="false"
-                        android:textColor="#6A4035"
+                        android:textColor="#EC6D1E"
                         android:text="    " />
 
                     <TextView
@@ -330,7 +330,7 @@
                         android:fontFamily="@font/notosansbold"
                         android:gravity="center"
                         android:includeFontPadding="false"
-                        android:textColor="#6A4035"
+                        android:textColor="#EC6D1E"
                         android:text="    " />
 
                     <TextView
@@ -348,7 +348,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/notosansbold"
                         android:gravity="center"
-                        android:textColor="#6A4035"
+                        android:textColor="#EC6D1E"
                         android:includeFontPadding="false"
                         android:text="    " />
                 </TableRow>
@@ -371,7 +371,7 @@
                         android:fontFamily="@font/notosansbold"
                         android:gravity="center"
                         android:includeFontPadding="false"
-                        android:textColor="#6A4035"
+                        android:textColor="#EC6D1E"
                         android:text="    " />
 
                     <TextView
@@ -390,7 +390,7 @@
                         android:fontFamily="@font/notosansbold"
                         android:gravity="center"
                         android:includeFontPadding="false"
-                        android:textColor="#6A4035"
+                        android:textColor="#EC6D1E"
                         android:text="    " />
 
                     <TextView
@@ -409,7 +409,7 @@
                         android:fontFamily="@font/notosansbold"
                         android:gravity="center"
                         android:includeFontPadding="false"
-                        android:textColor="#6A4035"
+                        android:textColor="#EC6D1E"
                         android:text="    " />
 
                     <TextView
@@ -428,7 +428,7 @@
                         android:fontFamily="@font/notosansbold"
                         android:gravity="center"
                         android:includeFontPadding="false"
-                        android:textColor="#6A4035"
+                        android:textColor="#EC6D1E"
                         android:text="    " />
                 </TableRow>
             </TableLayout>
@@ -680,7 +680,7 @@
 
             <TextView
                 android:id="@+id/newsTitle"
-                android:layout_width="250dp"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
@@ -688,6 +688,8 @@
                 android:includeFontPadding="false"
                 android:text="3년 만에 배당락 극복한 삼성전자, 특별배당 가능성은?"
                 android:textSize="20sp"
+                android:maxLines="2"
+                android:ellipsize="end"
                 app:layout_constraintStart_toStartOf="@+id/view4"
                 app:layout_constraintTop_toTopOf="@+id/view4" />
 
@@ -714,6 +716,8 @@
                 android:fontFamily="@font/notosansbold"
                 android:includeFontPadding="false"
                 android:maxWidth="320dp"
+                android:maxLines="6"
+                android:ellipsize="end"
                 android:text="#삼성전자 3년 주주환원 정책 마감, 특별배당 결정 여부 관심\n #잉여현금흐름 50% 배당 원칙, 올해는 악화로 특별배당 우려 \n#배당금 축소 가능성 제기되며, 자본적지출 급증도 영향"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@+id/view4"

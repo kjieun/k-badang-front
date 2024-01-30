@@ -88,6 +88,31 @@ public class SecondFragment extends Fragment {
                         } else if(monthlist.get(i) == 12){
                             binding.month12text.setText(dividendlist.get(i).getCashKrw());
                         }
+
+                        if (i == 0) {
+                            binding.row1cul1.setText(dividendlist.get(i).getExDate());
+                            binding.low1cul2.setText(dividendlist.get(i).getPaymentDate());
+                            binding.row1cul3.setText(dividendlist.get(i).getTendency());
+                            binding.row1cul4.setText(dividendlist.get(i).getRatio());
+                        } else if(i == 1) {
+                            binding.row2cul1.setText(dividendlist.get(i).getExDate());
+                            binding.row2cul2.setText(dividendlist.get(i).getPaymentDate());
+                            binding.row2cul3.setText(dividendlist.get(i).getTendency());
+                            binding.row2cul4.setText(dividendlist.get(i).getRatio());
+
+                        } else if(i == 2) {
+                            binding.row3cul1.setText(dividendlist.get(i).getExDate());
+                            binding.row3cul2.setText(dividendlist.get(i).getPaymentDate());
+                            binding.row3cul3.setText(dividendlist.get(i).getTendency());
+                            binding.row3cul4.setText(dividendlist.get(i).getRatio());
+
+                        } else if(i == 3) {
+                            binding.row4cul1.setText(dividendlist.get(i).getExDate());
+                            binding.row4cul2.setText(dividendlist.get(i).getPaymentDate());
+                            binding.row4cul3.setText(dividendlist.get(i).getTendency());
+                            binding.row4cul4.setText(dividendlist.get(i).getRatio());
+
+                        }
                     }
                 }
             }
@@ -99,6 +124,36 @@ public class SecondFragment extends Fragment {
             }
 
         });
+
+
+        //뉴스 데이터 셋팅
+
+        id = getArguments().getString("id").toString();
+        Call<DataModelNews> call2;
+        call2 = retrofit_client.getApiService().test_4(id, "news");
+        call2.enqueue(new Callback<DataModelNews>() {
+
+            @Override
+            public void onResponse(Call<DataModelNews> call, Response<DataModelNews> response) {
+                try {
+                    DataModelNews result = response.body();
+                    binding.newsTitle.setText(result.getSubject());
+                    binding.newsgptresult.setText(
+                            "# " + result.getSummary().get(0)
+                                    + "\n# " + result.getSummary().get(1)
+                                    + "\n# " + result.getSummary().get(2)
+                    );
+                }catch (Exception e){}
+            }
+
+            @Override
+            public void onFailure(Call<DataModelNews> call, Throwable t) {
+                NavHostFragment.findNavController(SecondFragment.this)
+                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+            }
+        });
+
+
         /*String data = getAssetJsonData(getActivity(), "A005930.json");
         Type type = new TypeToken<DataModel3>(){}.getType();
 
@@ -118,6 +173,13 @@ public class SecondFragment extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(SecondFragment.this)
                         .navigate(R.id.action_SecondFragment_to_DivNoticeFragment);
+            }
+        });
+        binding.buttonPrevious.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(SecondFragment.this)
+                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
         });
     }
