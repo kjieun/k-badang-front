@@ -1,0 +1,27 @@
+[
+  {
+    "alarm_id": 1,
+    "member_stock_id": 1,
+    "alarm_domain": "DIVIDEND",
+    "message": "1월 배당 통지 | 삼성전자 배당 통지서 수령"
+  },
+  {
+    "alarm_id": 2,
+    "member_stock_id": 2,
+    "alarm_domain": "NEWS",
+    "message": "1월 2일 뉴스 요약 | 삼성전자"
+  },
+
+  {
+    "alarm_id": 3,
+    "member_stock_id": 1,
+    "alarm_domain": "DIVIDEND",
+    "message": "9월 배당 통지 | 삼성전자 배당 통지서 수령"
+  },
+  {
+    "alarm_id": 4,
+    "member_stock_id": 2,
+    "alarm_domain": "NEWS",
+    "message": "9월 20일 뉴스 요약 | 삼성전자"
+  }
+]

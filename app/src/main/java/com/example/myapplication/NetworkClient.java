@@ -22,8 +22,14 @@ public class NetworkClient {
 
     private static Retrofit getInstance(){
         Gson gson = new GsonBuilder().setLenient().create();
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .connectTimeout(1, TimeUnit.MINUTES)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(15, TimeUnit.SECONDS)
+                .build();
         return new Retrofit.Builder()
                 .baseUrl(SUB_URL)
+                .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
     }

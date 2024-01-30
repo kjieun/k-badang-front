@@ -38,7 +38,7 @@ public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
 
-    @Override
+    @Overrideㅍ
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
@@ -55,66 +55,71 @@ public class SecondFragment extends Fragment {
             @Override
             public void onResponse(Call<DataModel3> call, Response<DataModel3> response) {
                 DataModel3 result = response.body();
-                binding.textView2.setText(result.getName());
-                binding.totalAmt.setText(result.getDividendCash() + " 원");
+                binding.textView2.setText("카카오");
+                binding.totalAmt.setText("0 원");
+                if (result != null) {
+                    binding.textView2.setText(result.getName());
+                    binding.totalAmt.setText(result.getDividendCash() + " 원");
 
-                List<Integer> monthlist = result.getMonths();
-                List<DataModel4> dividendlist = result.getDividendHistories();
-                if (!monthlist.isEmpty() && !dividendlist.isEmpty()){
-                    int j = 0;
-                    for(int i=0; i<dividendlist.size(); i++){
-                        if(monthlist.get(i) == 1){
-                            binding.month1text.setText(dividendlist.get(i).getCashKrw());
-                        } else if(monthlist.get(i) == 2){
-                            binding.month2text.setText(dividendlist.get(i).getCashKrw());
-                        } else if(monthlist.get(i) == 3){
-                            binding.month3text.setText(dividendlist.get(i).getCashKrw());
-                        } else if(monthlist.get(i) == 4){
-                            binding.month4text.setText(dividendlist.get(i).getCashKrw());
-                        } else if(monthlist.get(i) == 5){
-                            binding.month5text.setText(dividendlist.get(i).getCashKrw());
-                        } else if(monthlist.get(i) == 6){
-                            binding.month6text.setText(dividendlist.get(i).getCashKrw());
-                        } else if(monthlist.get(i) == 7){
-                            binding.month7text.setText(dividendlist.get(i).getCashKrw());
-                        } else if(monthlist.get(i) == 8){
-                            binding.month8text.setText(dividendlist.get(i).getCashKrw());
-                        } else if(monthlist.get(i) == 9){
-                            binding.month9text.setText(dividendlist.get(i).getCashKrw());
-                        } else if(monthlist.get(i) == 10){
-                            binding.month10text.setText(dividendlist.get(i).getCashKrw());
-                        } else if(monthlist.get(i) == 11){
-                            binding.month11text.setText(dividendlist.get(i).getCashKrw());
-                        } else if(monthlist.get(i) == 12){
-                            binding.month12text.setText(dividendlist.get(i).getCashKrw());
-                        }
+                    List<Integer> monthlist = result.getMonths();
+                    List<DataModel4> dividendlist = result.getDividendHistories();
+                    if (!monthlist.isEmpty() && !dividendlist.isEmpty()) {
+                        int j = 0;
+                        for (int i = 0; i < dividendlist.size(); i++) {
+                            if (monthlist.get(i) == 1) {
+                                binding.month1text.setText(dividendlist.get(i).getCashKrw());
+                            } else if (monthlist.get(i) == 2) {
+                                binding.month2text.setText(dividendlist.get(i).getCashKrw());
+                            } else if (monthlist.get(i) == 3) {
+                                binding.month3text.setText(dividendlist.get(i).getCashKrw());
+                            } else if (monthlist.get(i) == 4) {
+                                binding.month4text.setText(dividendlist.get(i).getCashKrw());
+                            } else if (monthlist.get(i) == 5) {
+                                binding.month5text.setText(dividendlist.get(i).getCashKrw());
+                            } else if (monthlist.get(i) == 6) {
+                                binding.month6text.setText(dividendlist.get(i).getCashKrw());
+                            } else if (monthlist.get(i) == 7) {
+                                binding.month7text.setText(dividendlist.get(i).getCashKrw());
+                            } else if (monthlist.get(i) == 8) {
+                                binding.month8text.setText(dividendlist.get(i).getCashKrw());
+                            } else if (monthlist.get(i) == 9) {
+                                binding.month9text.setText(dividendlist.get(i).getCashKrw());
+                            } else if (monthlist.get(i) == 10) {
+                                binding.month10text.setText(dividendlist.get(i).getCashKrw());
+                            } else if (monthlist.get(i) == 11) {
+                                binding.month11text.setText(dividendlist.get(i).getCashKrw());
+                            } else if (monthlist.get(i) == 12) {
+                                binding.month12text.setText(dividendlist.get(i).getCashKrw());
+                            }
 
-                        if (i == 0) {
-                            binding.row1cul1.setText(dividendlist.get(i).getExDate());
-                            binding.low1cul2.setText(dividendlist.get(i).getPaymentDate());
-                            binding.row1cul3.setText(dividendlist.get(i).getTendency());
-                            binding.row1cul4.setText(dividendlist.get(i).getRatio());
-                        } else if(i == 1) {
-                            binding.row2cul1.setText(dividendlist.get(i).getExDate());
-                            binding.row2cul2.setText(dividendlist.get(i).getPaymentDate());
-                            binding.row2cul3.setText(dividendlist.get(i).getTendency());
-                            binding.row2cul4.setText(dividendlist.get(i).getRatio());
+                            if (i == 0) {
+                                binding.row1cul1.setText(dividendlist.get(i).getExDate());
+                                binding.low1cul2.setText(dividendlist.get(i).getPaymentDate());
+                                binding.row1cul3.setText(dividendlist.get(i).getTendency());
+                                binding.row1cul4.setText(dividendlist.get(i).getRatio());
+                            } else if (i == 1) {
+                                binding.row2cul1.setText(dividendlist.get(i).getExDate());
+                                binding.row2cul2.setText(dividendlist.get(i).getPaymentDate());
+                                binding.row2cul3.setText(dividendlist.get(i).getTendency());
+                                binding.row2cul4.setText(dividendlist.get(i).getRatio());
 
-                        } else if(i == 2) {
-                            binding.row3cul1.setText(dividendlist.get(i).getExDate());
-                            binding.row3cul2.setText(dividendlist.get(i).getPaymentDate());
-                            binding.row3cul3.setText(dividendlist.get(i).getTendency());
-                            binding.row3cul4.setText(dividendlist.get(i).getRatio());
+                            } else if (i == 2) {
+                                binding.row3cul1.setText(dividendlist.get(i).getExDate());
+                                binding.row3cul2.setText(dividendlist.get(i).getPaymentDate());
+                                binding.row3cul3.setText(dividendlist.get(i).getTendency());
+                                binding.row3cul4.setText(dividendlist.get(i).getRatio());
 
-                        } else if(i == 3) {
-                            binding.row4cul1.setText(dividendlist.get(i).getExDate());
-                            binding.row4cul2.setText(dividendlist.get(i).getPaymentDate());
-                            binding.row4cul3.setText(dividendlist.get(i).getTendency());
-                            binding.row4cul4.setText(dividendlist.get(i).getRatio());
+                            } else if (i == 3) {
+                                binding.row4cul1.setText(dividendlist.get(i).getExDate());
+                                binding.row4cul2.setText(dividendlist.get(i).getPaymentDate());
+                                binding.row4cul3.setText(dividendlist.get(i).getTendency());
+                                binding.row4cul4.setText(dividendlist.get(i).getRatio());
 
+                            }
                         }
                     }
                 }
+
             }
 
             @Override
@@ -124,7 +129,6 @@ public class SecondFragment extends Fragment {
             }
 
         });
-
 
         //뉴스 데이터 셋팅
 
@@ -143,13 +147,12 @@ public class SecondFragment extends Fragment {
                                     + "\n# " + result.getSummary().get(1)
                                     + "\n# " + result.getSummary().get(2)
                     );
-                }catch (Exception e){}
+                } catch (Exception e) {
+                }
             }
 
             @Override
             public void onFailure(Call<DataModelNews> call, Throwable t) {
-                NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
         });
 
@@ -164,6 +167,7 @@ public class SecondFragment extends Fragment {
         return binding.getRoot();
 
     }
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
