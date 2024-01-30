@@ -14,7 +14,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NetworkClient {
-    private static final String BASE_URL = "https://jsonplaceholder.typicode.com/";
+    public static final String BASE_URL = "https://jsonplaceholder.typicode.com";
+    private static final String SUB_URL = "https://6hmib39k54.execute-api.ap-northeast-2.amazonaws.com";
 
 
     public static NetworkInterface getApiService(){return getInstance().create(NetworkInterface.class);}
@@ -22,7 +23,7 @@ public class NetworkClient {
     private static Retrofit getInstance(){
         Gson gson = new GsonBuilder().setLenient().create();
         return new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(SUB_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
     }

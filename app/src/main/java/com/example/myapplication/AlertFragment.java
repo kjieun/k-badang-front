@@ -36,6 +36,7 @@ public class AlertFragment extends Fragment {
             }
         });
 
+        // 알람에서 배당 통지서 선택 시
         binding.dividendBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,6 +44,18 @@ public class AlertFragment extends Fragment {
                         .navigate(R.id.action_AlertFragment_to_DivNoticeFragment);
             }
         });
+
+        // 알람에서 뉴스 선택 시
+        binding.newslayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("id", "A005930");
+                NavHostFragment.findNavController(AlertFragment.this)
+                        .navigate(R.id.action_AlertFragment_to_SecondFragment, bundle);
+            }
+        });
+
     }
 
     @Override

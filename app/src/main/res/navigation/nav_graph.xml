@@ -47,6 +47,9 @@
         <action
             android:id="@+id/action_AlertFragment_to_DivNoticeFragment"
             app:destination="@id/DivNoticeFragment" />
+        <action
+            android:id="@+id/action_AlertFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
     </fragment>
     <fragment
         android:id="@+id/DividendFragment"

@@ -38,94 +38,417 @@
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
             android:background="@drawable/searchbar"
             android:fontFamily="@font/notosansbold"
             android:hint="            검색"
             android:includeFontPadding="false"
             android:minWidth="48dp"
             android:minHeight="48dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
             android:textColorHint="#d3b1a8"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            tools:layout_editor_absoluteX="15dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="35dp"
-            android:layout_marginRight="15dp"
-            app:layout_constraintEnd_toEndOf="@+id/editText"
-            app:layout_constraintStart_toStartOf="@+id/editText"
+            android:fillViewport="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editText">
 
-
-            <ImageButton
-                android:id="@+id/image_237501"
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:background="@drawable/group_237501"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/stockTextName1"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/total_company_layout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/notosansregular"
-                android:includeFontPadding="false"
-                android:text="삼성전자"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="@+id/image_237501"
-                app:layout_constraintStart_toStartOf="@+id/image_237501"
-                app:layout_constraintTop_toBottomOf="@+id/image_237501" />
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginRight="15dp"
+                    app:layout_constraintEnd_toEndOf="@+id/editText"
+                    app:layout_constraintStart_toStartOf="@+id/editText"
+                    app:layout_constraintTop_toBottomOf="@+id/editText">
 
 
-            <ImageButton
-                android:id="@+id/group_237462"
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:background="@drawable/group_237462"
-                app:layout_constraintEnd_toStartOf="@+id/image_237502"
-                app:layout_constraintStart_toEndOf="@+id/image_237501"
-                app:layout_constraintTop_toTopOf="parent" />
+                    <ImageButton
+                        android:id="@+id/image_237501"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:background="@drawable/group_237501"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/stockTextName2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/notosansregular"
-                android:includeFontPadding="false"
-                android:text="SK"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="@+id/group_237462"
-                app:layout_constraintStart_toStartOf="@+id/group_237462"
-                app:layout_constraintTop_toBottomOf="@+id/group_237462" />
+                    <TextView
+                        android:id="@+id/stockTextName1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansregular"
+                        android:includeFontPadding="false"
+                        android:text="삼성전자"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/image_237501"
+                        app:layout_constraintStart_toStartOf="@+id/image_237501"
+                        app:layout_constraintTop_toBottomOf="@+id/image_237501" />
 
-            <ImageButton
-                android:id="@+id/image_237502"
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:background="@drawable/group_237502"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/stockTextName3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/notosansregular"
-                android:includeFontPadding="false"
-                android:text="HD현대"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="@+id/image_237502"
-                app:layout_constraintStart_toStartOf="@+id/image_237502"
-                app:layout_constraintTop_toBottomOf="@+id/image_237502" />
+                    <ImageButton
+                        android:id="@+id/group_237462"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:background="@drawable/group_237462"
+                        app:layout_constraintEnd_toStartOf="@+id/image_237502"
+                        app:layout_constraintStart_toEndOf="@+id/image_237501"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/stockTextName2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansregular"
+                        android:includeFontPadding="false"
+                        android:text="SK"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/group_237462"
+                        app:layout_constraintStart_toStartOf="@+id/group_237462"
+                        app:layout_constraintTop_toBottomOf="@+id/group_237462" />
+
+                    <ImageButton
+                        android:id="@+id/image_237502"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:background="@drawable/group_237502"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/stockTextName3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansregular"
+                        android:includeFontPadding="false"
+                        android:text="HD현대"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/image_237502"
+                        app:layout_constraintStart_toStartOf="@+id/image_237502"
+                        app:layout_constraintTop_toBottomOf="@+id/image_237502" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="15dp"
+                    app:layout_constraintEnd_toEndOf="@+id/editText"
+                    app:layout_constraintStart_toStartOf="@+id/editText"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+
+                    <ImageButton
+                        android:id="@+id/image_237463"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:background="@drawable/group_237463"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/stockTextName4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansregular"
+                        android:includeFontPadding="false"
+                        android:text="LG"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/image_237463"
+                        app:layout_constraintStart_toStartOf="@+id/image_237463"
+                        app:layout_constraintTop_toBottomOf="@+id/image_237463" />
+
+
+                    <ImageButton
+                        android:id="@+id/grouphd"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:background="@drawable/grouphd"
+                        app:layout_constraintEnd_toStartOf="@+id/image_237461"
+                        app:layout_constraintStart_toEndOf="@+id/image_237463"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/stockTextName5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansregular"
+                        android:includeFontPadding="false"
+                        android:text="현대차"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/grouphd"
+                        app:layout_constraintStart_toStartOf="@+id/grouphd"
+                        app:layout_constraintTop_toBottomOf="@+id/grouphd" />
+
+                    <ImageButton
+                        android:id="@+id/image_237461"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:background="@drawable/group_237461"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/stockTextName6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansregular"
+                        android:includeFontPadding="false"
+                        android:text="S-OIL"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/image_237461"
+                        app:layout_constraintStart_toStartOf="@+id/image_237461"
+                        app:layout_constraintTop_toBottomOf="@+id/image_237461" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="15dp"
+                    app:layout_constraintEnd_toEndOf="@+id/editText"
+                    app:layout_constraintStart_toStartOf="@+id/editText"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+
+
+                    <ImageButton
+                        android:id="@+id/image_nc"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:background="@drawable/group_nc"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/stockTextName7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansregular"
+                        android:includeFontPadding="false"
+                        android:text="NC"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/image_nc"
+                        app:layout_constraintStart_toStartOf="@+id/image_nc"
+                        app:layout_constraintTop_toBottomOf="@+id/image_nc" />
+
+
+                    <ImageButton
+                        android:id="@+id/image_kakao"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:background="@drawable/group_kakao"
+                        app:layout_constraintEnd_toStartOf="@+id/image_naver"
+                        app:layout_constraintStart_toEndOf="@+id/image_nc"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/stockTextName8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansregular"
+                        android:includeFontPadding="false"
+                        android:text="카카오"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/image_kakao"
+                        app:layout_constraintStart_toStartOf="@+id/image_kakao"
+                        app:layout_constraintTop_toBottomOf="@+id/image_kakao" />
+
+                    <ImageButton
+                        android:id="@+id/image_naver"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:background="@drawable/group_naver"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/stockTextName9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansregular"
+                        android:includeFontPadding="false"
+                        android:text="NAVER"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/image_naver"
+                        app:layout_constraintStart_toStartOf="@+id/image_naver"
+                        app:layout_constraintTop_toBottomOf="@+id/image_naver" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/default_company_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="15dp"
+                    app:layout_constraintEnd_toEndOf="@+id/editText"
+                    app:layout_constraintStart_toStartOf="@+id/editText"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
+
+
+                    <ImageButton
+                        android:id="@+id/image_default1"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:background="@drawable/group_default"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/stockTextName10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansregular"
+                        android:includeFontPadding="false"
+                        android:text="NC"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/image_default1"
+                        app:layout_constraintStart_toStartOf="@+id/image_default1"
+                        app:layout_constraintTop_toBottomOf="@+id/image_default1" />
+
+
+                    <ImageButton
+                        android:id="@+id/image_default2"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:background="@drawable/group_default"
+                        app:layout_constraintEnd_toStartOf="@+id/image_default3"
+                        app:layout_constraintStart_toEndOf="@+id/image_default1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/stockTextName11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansregular"
+                        android:includeFontPadding="false"
+                        android:text="카카오"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/image_default2"
+                        app:layout_constraintStart_toStartOf="@+id/image_default2"
+                        app:layout_constraintTop_toBottomOf="@+id/image_default2" />
+
+                    <ImageButton
+                        android:id="@+id/image_default3"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:background="@drawable/group_default"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/stockTextName12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansregular"
+                        android:includeFontPadding="false"
+                        android:text="NAVER"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/image_default3"
+                        app:layout_constraintStart_toStartOf="@+id/image_default3"
+                        app:layout_constraintTop_toBottomOf="@+id/image_default3" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/default_company_layout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="15dp"
+                    app:layout_constraintEnd_toEndOf="@+id/editText"
+                    app:layout_constraintStart_toStartOf="@+id/editText"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
+
+
+                    <ImageButton
+                        android:id="@+id/image_default4"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:background="@drawable/group_default"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/stockTextName13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansregular"
+                        android:includeFontPadding="false"
+                        android:text="NC"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/image_default4"
+                        app:layout_constraintStart_toStartOf="@+id/image_default4"
+                        app:layout_constraintTop_toBottomOf="@+id/image_default4" />
+
+
+                    <ImageButton
+                        android:id="@+id/image_default5"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:background="@drawable/group_default"
+                        app:layout_constraintEnd_toStartOf="@+id/image_default6"
+                        app:layout_constraintStart_toEndOf="@+id/image_default4"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/stockTextName14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansregular"
+                        android:includeFontPadding="false"
+                        android:text="카카오"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/image_default5"
+                        app:layout_constraintStart_toStartOf="@+id/image_default5"
+                        app:layout_constraintTop_toBottomOf="@+id/image_default5" />
+
+                    <ImageButton
+                        android:id="@+id/image_default6"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:background="@drawable/group_default"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/stockTextName15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansregular"
+                        android:includeFontPadding="false"
+                        android:text="NAVER"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="@+id/image_default6"
+                        app:layout_constraintStart_toStartOf="@+id/image_default6"
+                        app:layout_constraintTop_toBottomOf="@+id/image_default6" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </ScrollView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

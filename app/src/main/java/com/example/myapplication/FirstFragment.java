@@ -22,12 +22,72 @@ import retrofit2.Retrofit;
 
 public class FirstFragment extends Fragment {
 
-    private FragmentFirstBinding binding;
+    public FragmentFirstBinding binding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentFirstBinding.inflate(inflater, container, false);
+
+        NetworkClient retrofit_client = new NetworkClient();
+        Call<DataModel3> call;
+        String id = "A005930";
+        call = retrofit_client.getApiService().test_2(id, "badang");
+        call.enqueue(new Callback<DataModel3>() {
+            @Override
+            public void onResponse(Call<DataModel3> call, Response<DataModel3> response) {
+                DataModel3 result = response.body();
+                binding.stock1DivTextView.setText(result.getDividendYieldRatio());
+            }
+
+            @Override
+            public void onFailure(Call<DataModel3> call, Throwable t) {
+            }
+
+        });
+
+        id = "A034730";
+        call = retrofit_client.getApiService().test_2(id, "badang");
+        call.enqueue(new Callback<DataModel3>() {
+            @Override
+            public void onResponse(Call<DataModel3> call, Response<DataModel3> response) {
+                DataModel3 result = response.body();
+                binding.stock2DivTextView.setText(result.getDividendYieldRatio());
+            }
+
+            @Override
+            public void onFailure(Call<DataModel3> call, Throwable t) {
+            }
+
+        });
+        id = "A035420";
+        call = retrofit_client.getApiService().test_2(id, "badang");
+        call.enqueue(new Callback<DataModel3>() {
+            @Override
+            public void onResponse(Call<DataModel3> call, Response<DataModel3> response) {
+                DataModel3 result = response.body();
+                binding.addstockStock1DivTextView.setText(result.getDividendYieldRatio());
+            }
+
+            @Override
+            public void onFailure(Call<DataModel3> call, Throwable t) {
+            }
+
+        });
+        id = "A267250";
+        call = retrofit_client.getApiService().test_2(id, "badang");
+        call.enqueue(new Callback<DataModel3>() {
+            @Override
+            public void onResponse(Call<DataModel3> call, Response<DataModel3> response) {
+                DataModel3 result = response.body();
+                binding.addstockStock3DivTextView.setText(result.getDividendYieldRatio());
+            }
+
+            @Override
+            public void onFailure(Call<DataModel3> call, Throwable t) {
+            }
+
+        });
         return binding.getRoot();
 
     }
@@ -35,28 +95,6 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        NetworkClient retrofit_client = new NetworkClient();
-        Call<DataModel1> call;
-
-        call = retrofit_client.getApiService().test_api_get("5");
-        call.enqueue(new Callback<DataModel1>() {
-            @Override
-            public void onResponse(Call<DataModel1> call, Response<DataModel1> response) {
-                DataModel1 result = response.body();
-                String str;
-                str = result.getUserId() + "\n" + result.getID() + "\n" + result.getTitle() + "\n" + result.getBody();
-                Log.d("kbadang", "userId: " + result.getUserId());
-                Log.d("kbadang", "id : " + result.getID());
-                Log.d("kbadang", "title : " + result.getTitle());
-                Log.d("kbadang", "body : " + result.getBody());
-            }
-
-            @Override
-            public void onFailure(Call<DataModel1> call, Throwable t) {
-
-            }
-
-        });
 
         binding.alertButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,10 +106,43 @@ public class FirstFragment extends Fragment {
         binding.stockButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this).navigate(R.id.action_FirstFragment_to_SecondFragment);
+                Bundle bundle = new Bundle();
+                bundle.putString("id", "A005930");
+                NavHostFragment.findNavController(FirstFragment.this).navigate(R.id.action_FirstFragment_to_SecondFragment, bundle);
             }
         });
-
+        binding.stockButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("id", "A034730");
+                NavHostFragment.findNavController(FirstFragment.this).navigate(R.id.action_FirstFragment_to_SecondFragment, bundle);
+            }
+        });
+        binding.addstockStockButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("id", "A035420");
+                NavHostFragment.findNavController(FirstFragment.this).navigate(R.id.action_FirstFragment_to_SecondFragment, bundle);
+            }
+        });
+        binding.addstockStockButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("id", "A035720");
+                NavHostFragment.findNavController(FirstFragment.this).navigate(R.id.action_FirstFragment_to_SecondFragment, bundle);
+            }
+        });
+        binding.addstockStockButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("id", "A267250");
+                NavHostFragment.findNavController(FirstFragment.this).navigate(R.id.action_FirstFragment_to_SecondFragment, bundle);
+            }
+        });
         binding.imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,6 +166,32 @@ public class FirstFragment extends Fragment {
 
                 binding.userstockLayout.setVisibility(View.INVISIBLE);
                 binding.addstockLayout.setVisibility(View.VISIBLE);
+
+                try {
+                    if (getArguments().getString("id").equals("grouphd")) {
+                        binding.addstockStockboxLayout3.setVisibility(View.VISIBLE);
+                        binding.addstockStockText3.setText("현대차");
+
+                    } else if (getArguments().getString("id").equals("group237462")) {
+                        binding.addstockStockboxLayout3.setVisibility(View.VISIBLE);
+                        binding.addstockStockText3.setText("SK");
+                    } else if (getArguments().getString("id").equals("image237502")) {
+                        binding.addstockStockboxLayout3.setVisibility(View.VISIBLE);
+                        binding.addstockStockText3.setText("HD현대");
+                    } else if (getArguments().getString("id").equals("image237463")) {
+                        binding.addstockStockboxLayout3.setVisibility(View.VISIBLE);
+                        binding.addstockStockText3.setText("LG");
+                    } else if (getArguments().getString("id").equals("image237461")) {
+                        binding.addstockStockboxLayout3.setVisibility(View.VISIBLE);
+                        binding.addstockStockText3.setText("S-OIL");
+                    } else if (getArguments().getString("id").equals("imageNc")) {
+                        binding.addstockStockboxLayout3.setVisibility(View.VISIBLE);
+                        binding.addstockStockText3.setText("NC");
+                    }
+
+                } catch (Exception e) {
+
+                }
 
             }
         });

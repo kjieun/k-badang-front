@@ -228,7 +228,7 @@
                 android:layout_height="65dp"
                 android:fontFamily="@font/notosansregular"
                 android:gravity="center"
-                android:text="3"
+                android:text="-"
                 android:textAlignment="center"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/textView11"
@@ -242,7 +242,7 @@
                 android:fontFamily="@font/notosansregular"
                 android:gravity="center"
                 android:includeFontPadding="false"
-                android:text="140"
+                android:text="-"
                 android:textAlignment="center"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/textView12"
@@ -255,7 +255,7 @@
                 android:layout_height="65dp"
                 android:fontFamily="@font/notosansregular"
                 android:gravity="center"
-                android:text="0"
+                android:text="-"
                 android:textAlignment="center"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="@+id/textView13"
@@ -267,7 +267,7 @@
                 android:layout_width="100dp"
                 android:gravity="center"
                 android:layout_height="65dp"
-                android:text="0"
+                android:text="-"
                 android:textAlignment="center"
                 android:fontFamily="@font/notosansregular"
                 android:textSize="14sp"
@@ -280,7 +280,7 @@
                 android:layout_width="100dp"
                 android:gravity="center"
                 android:layout_height="65dp"
-                android:text="2500"
+                android:text="-"
                 android:textAlignment="center"
                 android:textSize="14sp"
                 android:fontFamily="@font/notosansregular"
@@ -293,7 +293,7 @@
                 android:layout_width="100dp"
                 android:gravity="center"
                 android:layout_height="65dp"
-                android:text="0"
+                android:text="-"
                 android:textAlignment="center"
                 android:textSize="14sp"
                 android:fontFamily="@font/notosansregular"
@@ -560,6 +560,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
     <TextView
+        android:id="@+id/textView29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/notosansregular"
@@ -580,6 +581,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
     <TextView
+        android:id="@+id/placeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/notosansregular"
